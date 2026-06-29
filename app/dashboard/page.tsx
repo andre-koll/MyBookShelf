@@ -50,68 +50,6 @@ export default function Dashboard() {
             </CardContent>
         </Card>
     </div>
-
-    <div className="grid gap-4 md:gp-8 lg:grid-cols-2 xl:grid-cols-3 mt-10">
-        <Card className="xl:col-span-2">
-            <CardHeader>
-                <CardTitle>Inventory</CardTitle>
-                <CardDescription>
-                    Latest entries in your account
-                </CardDescription>
-            </CardHeader>
-        </Card>
-
-        <Card>
-            <CardHeader>
-                <CardTitle>Most Recently Added</CardTitle>
-            </CardHeader>
-            <CardContent className="flex flex-col gap-8">
-                <div className="flex items-center gap-4">
-                    {/* <Avatar className="hidden sm:flex h-9 w-9">
-                        <AvatarFallback>AT</AvatarFallback>
-                    </Avatar> */}
-                    <BookOpenText className="h-6 w-6" />
-                    <div className="grid gap-1">
-                        <p className="test-sm font-medium">F. Scott Fitzgerald</p>
-                        <p className="text-sm text-muted-foreground">The Great Gatsby</p>
-                    </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                    {/* <Avatar className="hidden sm:flex h-9 w-9">
-                        <AvatarFallback>AT</AvatarFallback>
-                    </Avatar> */}
-                    <BookOpenText className="h-6 w-6" />
-                    <div className="grid gap-1">
-                        <p className="test-sm font-medium">F. Scott Fitzgerald</p>
-                        <p className="text-sm text-muted-foreground">The Great Gatsby</p>
-                    </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                    {/* <Avatar className="hidden sm:flex h-9 w-9">
-                        <AvatarFallback>AT</AvatarFallback>
-                    </Avatar> */}
-                    <BookOpenText className="h-6 w-6" />
-                    <div className="grid gap-1">
-                        <p className="test-sm font-medium">F. Scott Fitzgerald</p>
-                        <p className="text-sm text-muted-foreground">The Great Gatsby</p>
-                    </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                    {/* <Avatar className="hidden sm:flex h-9 w-9">
-                        <AvatarFallback>AT</AvatarFallback>
-                    </Avatar> */}
-                    <BookOpenText className="h-6 w-6" />
-                    <div className="grid gap-1">
-                        <p className="test-sm font-medium">F. Scott Fitzgerald</p>
-                        <p className="text-sm text-muted-foreground">The Great Gatsby</p>
-                    </div>
-                </div>
-            </CardContent>
-        </Card>
-    </div>
     </>
   )
 }
