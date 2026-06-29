@@ -22,6 +22,9 @@ export default async function Assets({
 
   // Get asset data from db
   const assets = await prisma.asset.findMany({
+    where: {
+      id: id
+    },
     select: {
       id: true,
       title: true,
