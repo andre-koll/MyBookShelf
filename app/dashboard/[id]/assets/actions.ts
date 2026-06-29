@@ -85,18 +85,18 @@ export async function updateAssetByGoogle(formData: FormData) {
 
   // const postedById = "jkjkj";
 
-  await prisma.asset.create({
-    data: {
-      postedBy,
-      postedById,
-      isbn,
-      title,
-      author,
-      description,
-      type,
-      postedAt: new Date()
-    }
-  });
+  // await prisma.asset.create({
+  //   data: {
+  //     postedBy,
+  //     postedById,
+  //     isbn,
+  //     title,
+  //     author,
+  //     description,
+  //     type,
+  //     postedAt: new Date()
+  //   }
+  // });
 
   // redirect(`/dashboard/${postedById}/assets`) // Navigate to the asset page
 

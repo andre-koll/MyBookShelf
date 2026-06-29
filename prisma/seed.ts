@@ -78,7 +78,7 @@ async function seed () {
                 title: "The Great Gatsby",
                 author: "F. Scott Fitzgerald",
                 type: "Book",
-                shelf: "1",
+                shelfId: "1",
                 postedById: "2f1c5e8d-0510-4669-b9af-01f7eb688bad",
             },
             {
@@ -86,7 +86,7 @@ async function seed () {
                 title: "To Kill a Mockingbird",
                 author: "Harper Lee",
                 type: "Book",
-                shelf: "1",
+                shelfId: "1",
                 postedById: "2f1c5e8d-0510-4669-b9af-01f7eb688bad",
             },
             {
@@ -94,7 +94,7 @@ async function seed () {
                 title: "1984",
                 author: "George Orwell",
                 type: "Book",
-                shelf: "1",
+                shelfId: "1",
                 postedById: "2f1c5e8d-0510-4669-b9af-01f7eb688bad",
             },
         ]
