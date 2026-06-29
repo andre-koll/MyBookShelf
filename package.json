@@ -23,7 +23,7 @@
     "dotenv": "^17.4.2",
     "framer-motion": "^12.41.0",
     "list-react-files": "^0.2.0",
-    "lucide-react": "^1.21.0",
+    "lucide-react": "^1.22.0",
     "next": "16.2.9",
     "next-themes": "^0.4.6",
     "pg": "^8.22.0",
