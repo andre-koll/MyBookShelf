@@ -1,0 +1,117 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+// 1st npx prisma init
+// 2nd edit .enc and define db_url
+// 3rd npx prisma migrate dev --name init
+// 4th npx prisma generate
+
+// npx prisma db push
+// npx prisma migrate reset  
+
+generator client {
+  provider = "prisma-client"
+  // output   = "../lib/generated/prisma"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Asset {
+  id          String  @id @default(uuid())
+  isbn        String  @unique
+  title       String
+  author      String
+  type        String
+  shelf       String?
+  description String? @db.Text
+  price       String?
+
+  postedAt   DateTime @default(now())
+  postedBy   User     @relation("PostedAssets", fields: [postedById], references: [id])
+  postedById String
+
+  // shelfs Shelf[]
+}
+
+model Shelf {
+  id        String   @id @default(uuid())
+  name      String
+  userId    String
+  status    String   @default("PENDING") // REVIEWING, ACCEPTED, REJECTED
+  appliedAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+  // asset Asset @relation(fields: [assetId], references: [id])
+
+  // @@unique([assetId, userId])
+  // @@unique([userId])
+}
+
+model User {
+  id            String    @id @default(uuid())
+  name          String
+  email         String
+  emailVerified Boolean
+  image         String?
+  createdAt     DateTime
+  updatedAt     DateTime
+  sessions      Session[]
+  accounts      Account[]
+  assets        Asset[]   @relation("PostedAssets")
+  shelfs        Shelf[]
+  role          String    @default("User") // ["USER", "ADMIN"]
+  lang          String    @default("en")
+
+  @@unique([email])
+  @@map("user")
+}
+
+model Session {
+  id        String   @id
+  expiresAt DateTime
+  token     String
+  createdAt DateTime
+  updatedAt DateTime
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([token])
+  @@map("session")
+}
+
+model Account {
+  id                    String    @id
+  accountId             String
+  providerId            String
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime
+  updatedAt             DateTime
+
+  @@map("account")
+}
+
+model Verification {
+  id         String    @id
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime?
+  updatedAt  DateTime?
+
+  @@map("verification")
+}
