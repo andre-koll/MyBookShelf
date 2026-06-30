@@ -1,6 +1,3 @@
-// google api key=AIzaSyCvmEXTy4I1SSveCAAKIYakNp5RVoVoHOA 
-// https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=AIzaSyAqYZdqMg_a70j6IPwJybvjawCT84Yn4WU
-
 'use client'
 
 // import { useFormStatus } from "react-dom";
@@ -11,7 +8,7 @@ function googleApiBooks () {
   // testingg
   let isbn = '978-3-7645-0335-2'
   let apiUrl = 'https://www.googleapis.com/books/v1/volumes?q=isbn:'
-  let apiKey = 'AIzaSyCvmEXTy4I1SSveCAAKIYakNp5RVoVoHOA'
+  let apiKey = process.env.GOOGLE_API_BOOK_KEY
   let url = apiUrl + isbn + '&key=' + apiKey
   // let google = await fetch(url)
   // let googlebook = await google.json()

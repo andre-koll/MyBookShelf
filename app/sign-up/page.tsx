@@ -64,7 +64,7 @@ export default function SignUpPage() {
                 name="name"
                 type="text"
                 required
-                className="mt-1 block w-full rounded-md border border-black/[.08] dark:border-white/[.145] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-black/20 dark:focus:ring-white/20"
+                className="mt-1 block w-full rounded-md border border-black/8 dark:border-white/[.145] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-black/20 dark:focus:ring-white/20"
                 placeholder="John Doe"
               />
             </div>
@@ -79,7 +79,7 @@ export default function SignUpPage() {
                 type="email"
                 autoComplete="email"
                 required
-                className="mt-1 block w-full rounded-md border border-black/[.08] dark:border-white/[.145] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-black/20 dark:focus:ring-white/20"
+                className="mt-1 block w-full rounded-md border border-black/8 dark:border-white/[.145] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-black/20 dark:focus:ring-white/20"
                 placeholder="you@example.com"
               />
             </div>
@@ -95,7 +95,7 @@ export default function SignUpPage() {
                 autoComplete="new-password"
                 required
                 minLength={8}
-                className="mt-1 block w-full rounded-md border border-black/[.08] dark:border-white/[.145] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-black/20 dark:focus:ring-white/20"
+                className="mt-1 block w-full rounded-md border border-black/8] dark:border-white/[.145] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-black/20 dark:focus:ring-white/20"
                 placeholder="••••••••"
               />
               <p className="mt-1 text-xs text-black dark:text-gray-400">

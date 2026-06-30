@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Footer from "../components/layout/Footer"
 import { DarkMode } from "@/components/layout/DarkMode";
+import { loadEnvConfig } from '@next/env'
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
