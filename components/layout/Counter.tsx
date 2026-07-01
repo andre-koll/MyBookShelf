@@ -10,7 +10,6 @@ export default function Counter({ userId, action }: { userId: string; action: st
     useEffect(() => {
         // Fetch data from an API on the client side
         const fetchData = async () => {
-        // const res = await fetch('http://localhost:3000/api/' + action);
         const res = await fetch(process.env.NEXT_PUBLIC_APP_API_URL + action);
         const data = await res.json();
         setTotal(data);

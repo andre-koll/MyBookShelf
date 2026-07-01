@@ -4,9 +4,19 @@ import { DataTable } from "./data-table"
 async function getData(): Promise<Assets[]> {
     // Fetch data from API
     const userId = "LauLwQTtZ4z7baLMvFAHYMvFdow1FCwH"
+    const formData = new FormData();
+    formData.append('id', userId);
+    const putMethod = {
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            },
+            body: JSON.stringify(formData)
+        }
+
     const res = await fetch(
-        `http://localhost:3000/api/get/${userId}/asset`,
-        { cache: "no-store" }
+        process.env.NEXT_PUBLIC_APP_API_URL + `/get/${userId}/asset`,
+        putMethod
     )
     const data = await res.json()
 
