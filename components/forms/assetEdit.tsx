@@ -4,6 +4,8 @@ import SubmitButton from "./submit-button";
 // import prisma from "@/app/generated/prisma"
 import prisma from "@/lib/prisma"
 import ShelfSelect from "./shelfSelect";
+import Image from 'next/image'
+
 import Form from 'next/form'
 
 export default async function AssetForm({data} : {data:any}) {
@@ -20,6 +22,7 @@ export default async function AssetForm({data} : {data:any}) {
                     author: true,
                     description: true,
                     type: true,
+                    image: true,
                     shelf: {
                         select: {
                             id: true,
@@ -28,7 +31,7 @@ export default async function AssetForm({data} : {data:any}) {
                     },
                 }
     });
-    // console.log("assets", assets)
+    console.log("assets", assets)
 
     // Get shelfs data from db
     const shelfs = await prisma.shelf.findMany({
@@ -83,6 +86,21 @@ export default async function AssetForm({data} : {data:any}) {
                     className="border p-2 w-full"
                     required
                 />
+                <input
+                    name="type"
+                    placeholder="Type"
+                    // defaultValue={assets.image}
+                    className="border p-2 w-full"
+                    required
+                />
+                {/* <Image
+                    // src="http://books.google.com/books/content?id=tCUmAQAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+                    src={assets.image}
+                    height={0}
+                    width={0}
+                    style={{width:'128px', height: "auto" }}
+                    alt="{assets.title}"
+                /> */}
                 <div className="mt-2 grid grid-cols-1 w-80">
                     <select name="shelfId" className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" required>
                     <option key={assets.shelf?.id} value={assets.shelf?.id} defaultChecked>{assets.shelf?.name}</option>

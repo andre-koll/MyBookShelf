@@ -18,7 +18,6 @@ export default async function editAsset({
                 <div className="p-4 rounded-md border border-black/8 dark:border-white/[.145] bg-transparent shadow-md">
 
                     <AssetForm data={id} />
-                    {/* <AssetForm data="xxxx" /> */}
 
                 </div>
             </div>
