@@ -64,7 +64,7 @@ export default function SignInPage() {
                 type="email"
                 autoComplete="email"
                 required
-                className="mt-1 block w-full rounded-md border border-black/[.08] dark:border-white/[.145] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-black/20 dark:focus:ring-white/20"
+                className="mt-1 block w-full rounded-md border border-black/8 dark:border-white/[.145] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-black/20 dark:focus:ring-white/20"
                 placeholder="you@example.com"
               />
             </div>
@@ -87,7 +87,7 @@ export default function SignInPage() {
 
           <button
             type="submit"
-            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-full shadow-sm text-sm font-medium text-black bg-foreground hover:bg-[#383838] dark:hover:bg-[#ccc] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black/20 dark:focus:ring-white/20">
+            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-full shadow-sm text-sm font-medium text-black bg-foreground hover:bg-[#383838] bg-white  dark:hover:bg-[#ccc] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black/20 dark:focus:ring-white/20">
             Sign in
           </button>
         </form>
