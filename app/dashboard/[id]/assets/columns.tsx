@@ -15,15 +15,25 @@ import {
 import { useRouter } from "next/navigation";
 
 // This type is used to define the shape of our data.
+// You can use a Zod schema here if you want.
 export type Assets = {
     id: string
     title: string
     author: string
     status: "pending" | "processing" | "success" | "failed"
     shelf: string
+    image: string
 }
 
 export const columns: ColumnDef<Assets>[] = [
+    // {
+    //     accessorKey: "image",
+    //     header: ({ column }) => {
+    //     return (
+    //             <span>Image</span>
+    //         )
+    //     },
+    // },
     {
         accessorKey: "title",
         header: ({ column }) => {
@@ -102,6 +112,3 @@ export const columns: ColumnDef<Assets>[] = [
     },
   },
 ]
-
-// `/dashboard/${assets.id}/assets/edit`
-// onClick={() => router.push(`/dashboard/${assets.id}/assets/edit`)}

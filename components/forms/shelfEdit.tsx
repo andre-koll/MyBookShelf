@@ -1,6 +1,7 @@
 import { updateShelf } from "@/app/dashboard/[id]/shelfs/actions";
 import SubmitButton from "./submit-button";
-import prisma from "@/app/generated/prisma"
+// import prisma from "@/app/generated/prisma"
+import prisma from "@/lib/prisma"
 
 export default async function ShelfForm({data} : {data:any}) {
     // console.log({data});

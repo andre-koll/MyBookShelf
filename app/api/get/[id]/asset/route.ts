@@ -16,6 +16,7 @@ export async function PUT(req: Request) {
                     title: true,
                     author: true,
                     type: true,
+                    image: true,
                     shelf: {
                         select: {
                             name: true,

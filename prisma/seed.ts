@@ -3,7 +3,7 @@
 // npx prisma db seed
 
 // import { PrismaClient, Prisma} from "@prisma/client";
-import { PrismaClient } from "../lib/generated/prisma/client";
+import { PrismaClient } from "@/app/generated/prisma/client";
 import { PrismaPg } from '@prisma/adapter-pg';
 
 // const adapter = new PrismaPg();
@@ -20,7 +20,7 @@ const prisma = new PrismaClient({ adapter: pool })
 async function main() {
     const seedUser = [
         {
-            id: "2f1c5e8d-0510-4669-b9af-01f7eb688bad",
+            id: "77e5215f-e574-446a-853c-bb731e4743303",
             name: "John Doe",
             email: "john@example.com",
             emailVerified: false,
@@ -68,7 +68,7 @@ async function main() {
             author: "F. Scott Fitzgerald",
             type: "Book",
             shelfId: "810fd100-d411-4d65-baeb-9ed632bbb82e",
-            postedById: "2f1c5e8d-0510-4669-b9af-01f7eb688bad",
+            postedById: "FoFFqcBwEaylnbmHBjdDvNUVqt4iZYB3",
         },
         {
             isbn: "978-0-452-28423-4",
@@ -76,7 +76,7 @@ async function main() {
             author: "Harper Lee",
             type: "Book",
             shelfId: "810fd100-d411-4d65-baeb-9ed632bbb82e",
-            postedById: "2f1c5e8d-0510-4669-b9af-01f7eb688bad",
+            postedById: "FoFFqcBwEaylnbmHBjdDvNUVqt4iZYB3",
         },
         {
             isbn: "978-0-14-028329-7",
@@ -84,7 +84,7 @@ async function main() {
             author: "George Orwell",
             type: "Book",
             shelfId: "810fd100-d411-4d65-baeb-9ed632bbb82e",
-            postedById: "2f1c5e8d-0510-4669-b9af-01f7eb688bad",
+            postedById: "FoFFqcBwEaylnbmHBjdDvNUVqt4iZYB3",
         },
     ];
 
@@ -142,7 +142,7 @@ async function main() {
         {
             id: "cmqqsx3bh0000dfgsu1kji6m1",
             name: "Shelf 1",
-            userId: "2f1c5e8d-0510-4669-b9af-01f7eb688bad",
+            userId: "FoFFqcBwEaylnbmHBjdDvNUVqt4iZYB3",
             appliedAt: "2026-06-22T05:00:00.090Z",
         },
     ];
@@ -160,22 +160,22 @@ async function main() {
             create: user,
         });
     }
-    console.log(`Seeded ${seedUser.length} entries.`);
+    console.log(`Seeded ${seedUser.length} User entries.`);
     
-    for (const asset of seedAsset) {
-        await prisma.asset.upsert({
-            where: { isbn: asset.isbn },
-            update: {
-                title: asset.title,
-                author: asset.author,
-                type: asset.type,
-                shelfId: asset.shelfId,
-                postedById: asset.postedById,
-            },
-            create: asset,
-        });
-    }
-    console.log(`Seeded ${seedAsset.length} entries.`);
+    // for (const asset of seedAsset) {
+    //     await prisma.asset.upsert({
+    //         where: { isbn: asset.isbn },
+    //         update: {
+    //             title: asset.title,
+    //             author: asset.author,
+    //             type: asset.type,
+    //             shelfId: asset.shelfId,
+    //             postedById: asset.postedById,
+    //         },
+    //         create: asset,
+    //     });
+    // }
+    // console.log(`Seeded ${seedAsset.length} entries.`);
 
     for (const shelf of seedShelf) {
         await prisma.shelf.upsert({
@@ -188,7 +188,7 @@ async function main() {
             create: shelf,
         });
     }
-    console.log(`Seeded ${seedShelf.length} entries.`);
+    console.log(`Seeded ${seedShelf.length} Shelf entries.`);
 
     for (const isbn of fakeIsbn.isbns) {
         // await prisma.shelf.upsert({
@@ -217,7 +217,7 @@ async function main() {
             console.error(error)
         }
         if (googlebook && googlebook.totalItems > 0) {
-            // console.log('isbn = ' + isbn)
+            console.log('isbn = ' + isbn)
             // console.log('url = ' + url)
             // console.log(googlebook)
             // console.log('title ',  googlebook.items[0].volumeInfo.title);
@@ -240,8 +240,8 @@ async function main() {
             // };
             // console.log(googleAsset);
 
-            let postedById = "LauLwQTtZ4z7baLMvFAHYMvFdow1FCwH"
-            let shelfId = "68b8d288-1972-407d-9c9f-84b7b028ae0d"
+            let postedById = "FoFFqcBwEaylnbmHBjdDvNUVqt4iZYB3"
+            let shelfId = "ee1a765f-bc7f-4398-aa9d-677acb917eb7"
             let title = googlebook.items[0].volumeInfo.title
             let author = googlebook.items[0].volumeInfo.authors[0]
             let description = googlebook.items?.[0]?.searchInfo?.textSnippet

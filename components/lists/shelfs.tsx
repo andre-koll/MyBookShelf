@@ -3,7 +3,8 @@
 import { CardContent } from "@/components/ui/card"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 
-import prisma from "@/app/generated/prisma"
+// import prisma from "@/app/generated/prisma"
+import prisma from "@/lib/prisma"
 // import prisma from "@/app/generated/prisma"
 // import prisma, { Shelflist } from "@/lib/prisma"
 // import prisma from "../../lib/prisma"

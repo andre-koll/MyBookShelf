@@ -1,4 +1,5 @@
-import prisma from "@/app/generated/prisma"
+// import prisma from "@/app/generated/prisma"
+import prisma from "@/lib/prisma"
 import { PlusCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";

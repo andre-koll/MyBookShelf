@@ -30,11 +30,12 @@ export type AssetMinAggregateOutputType = {
   title: string | null
   author: string | null
   type: string | null
+  shelfId: string | null
   description: string | null
   price: string | null
+  image: string | null
   postedAt: Date | null
   postedById: string | null
-  shelfId: string | null
 }
 
 export type AssetMaxAggregateOutputType = {
@@ -43,11 +44,12 @@ export type AssetMaxAggregateOutputType = {
   title: string | null
   author: string | null
   type: string | null
+  shelfId: string | null
   description: string | null
   price: string | null
+  image: string | null
   postedAt: Date | null
   postedById: string | null
-  shelfId: string | null
 }
 
 export type AssetCountAggregateOutputType = {
@@ -56,11 +58,12 @@ export type AssetCountAggregateOutputType = {
   title: number
   author: number
   type: number
+  shelfId: number
   description: number
   price: number
+  image: number
   postedAt: number
   postedById: number
-  shelfId: number
   _all: number
 }
 
@@ -71,11 +74,12 @@ export type AssetMinAggregateInputType = {
   title?: true
   author?: true
   type?: true
+  shelfId?: true
   description?: true
   price?: true
+  image?: true
   postedAt?: true
   postedById?: true
-  shelfId?: true
 }
 
 export type AssetMaxAggregateInputType = {
@@ -84,11 +88,12 @@ export type AssetMaxAggregateInputType = {
   title?: true
   author?: true
   type?: true
+  shelfId?: true
   description?: true
   price?: true
+  image?: true
   postedAt?: true
   postedById?: true
-  shelfId?: true
 }
 
 export type AssetCountAggregateInputType = {
@@ -97,11 +102,12 @@ export type AssetCountAggregateInputType = {
   title?: true
   author?: true
   type?: true
+  shelfId?: true
   description?: true
   price?: true
+  image?: true
   postedAt?: true
   postedById?: true
-  shelfId?: true
   _all?: true
 }
 
@@ -183,11 +189,12 @@ export type AssetGroupByOutputType = {
   title: string
   author: string
   type: string
+  shelfId: string
   description: string | null
   price: string | null
+  image: string | null
   postedAt: Date
   postedById: string
-  shelfId: string
   _count: AssetCountAggregateOutputType | null
   _min: AssetMinAggregateOutputType | null
   _max: AssetMaxAggregateOutputType | null
@@ -217,13 +224,14 @@ export type AssetWhereInput = {
   title?: Prisma.StringFilter<"Asset"> | string
   author?: Prisma.StringFilter<"Asset"> | string
   type?: Prisma.StringFilter<"Asset"> | string
+  shelfId?: Prisma.StringFilter<"Asset"> | string
   description?: Prisma.StringNullableFilter<"Asset"> | string | null
   price?: Prisma.StringNullableFilter<"Asset"> | string | null
+  image?: Prisma.StringNullableFilter<"Asset"> | string | null
   postedAt?: Prisma.DateTimeFilter<"Asset"> | Date | string
   postedById?: Prisma.StringFilter<"Asset"> | string
-  shelfId?: Prisma.StringFilter<"Asset"> | string
-  postedBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   shelf?: Prisma.XOR<Prisma.ShelfScalarRelationFilter, Prisma.ShelfWhereInput>
+  postedBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
 }
 
 export type AssetOrderByWithRelationInput = {
@@ -232,13 +240,14 @@ export type AssetOrderByWithRelationInput = {
   title?: Prisma.SortOrder
   author?: Prisma.SortOrder
   type?: Prisma.SortOrder
+  shelfId?: Prisma.SortOrder
   description?: Prisma.SortOrderInput | Prisma.SortOrder
   price?: Prisma.SortOrderInput | Prisma.SortOrder
+  image?: Prisma.SortOrderInput | Prisma.SortOrder
   postedAt?: Prisma.SortOrder
   postedById?: Prisma.SortOrder
-  shelfId?: Prisma.SortOrder
-  postedBy?: Prisma.UserOrderByWithRelationInput
   shelf?: Prisma.ShelfOrderByWithRelationInput
+  postedBy?: Prisma.UserOrderByWithRelationInput
 }
 
 export type AssetWhereUniqueInput = Prisma.AtLeast<{
@@ -250,13 +259,14 @@ export type AssetWhereUniqueInput = Prisma.AtLeast<{
   title?: Prisma.StringFilter<"Asset"> | string
   author?: Prisma.StringFilter<"Asset"> | string
   type?: Prisma.StringFilter<"Asset"> | string
+  shelfId?: Prisma.StringFilter<"Asset"> | string
   description?: Prisma.StringNullableFilter<"Asset"> | string | null
   price?: Prisma.StringNullableFilter<"Asset"> | string | null
+  image?: Prisma.StringNullableFilter<"Asset"> | string | null
   postedAt?: Prisma.DateTimeFilter<"Asset"> | Date | string
   postedById?: Prisma.StringFilter<"Asset"> | string
-  shelfId?: Prisma.StringFilter<"Asset"> | string
-  postedBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   shelf?: Prisma.XOR<Prisma.ShelfScalarRelationFilter, Prisma.ShelfWhereInput>
+  postedBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
 }, "id" | "isbn">
 
 export type AssetOrderByWithAggregationInput = {
@@ -265,11 +275,12 @@ export type AssetOrderByWithAggregationInput = {
   title?: Prisma.SortOrder
   author?: Prisma.SortOrder
   type?: Prisma.SortOrder
+  shelfId?: Prisma.SortOrder
   description?: Prisma.SortOrderInput | Prisma.SortOrder
   price?: Prisma.SortOrderInput | Prisma.SortOrder
+  image?: Prisma.SortOrderInput | Prisma.SortOrder
   postedAt?: Prisma.SortOrder
   postedById?: Prisma.SortOrder
-  shelfId?: Prisma.SortOrder
   _count?: Prisma.AssetCountOrderByAggregateInput
   _max?: Prisma.AssetMaxOrderByAggregateInput
   _min?: Prisma.AssetMinOrderByAggregateInput
@@ -284,11 +295,12 @@ export type AssetScalarWhereWithAggregatesInput = {
   title?: Prisma.StringWithAggregatesFilter<"Asset"> | string
   author?: Prisma.StringWithAggregatesFilter<"Asset"> | string
   type?: Prisma.StringWithAggregatesFilter<"Asset"> | string
+  shelfId?: Prisma.StringWithAggregatesFilter<"Asset"> | string
   description?: Prisma.StringNullableWithAggregatesFilter<"Asset"> | string | null
   price?: Prisma.StringNullableWithAggregatesFilter<"Asset"> | string | null
+  image?: Prisma.StringNullableWithAggregatesFilter<"Asset"> | string | null
   postedAt?: Prisma.DateTimeWithAggregatesFilter<"Asset"> | Date | string
   postedById?: Prisma.StringWithAggregatesFilter<"Asset"> | string
-  shelfId?: Prisma.StringWithAggregatesFilter<"Asset"> | string
 }
 
 export type AssetCreateInput = {
@@ -299,9 +311,10 @@ export type AssetCreateInput = {
   type: string
   description?: string | null
   price?: string | null
+  image?: string | null
   postedAt?: Date | string
-  postedBy: Prisma.UserCreateNestedOneWithoutAssetsInput
   shelf: Prisma.ShelfCreateNestedOneWithoutAssetInput
+  postedBy: Prisma.UserCreateNestedOneWithoutAssetsInput
 }
 
 export type AssetUncheckedCreateInput = {
@@ -310,11 +323,12 @@ export type AssetUncheckedCreateInput = {
   title: string
   author: string
   type: string
+  shelfId: string
   description?: string | null
   price?: string | null
+  image?: string | null
   postedAt?: Date | string
   postedById: string
-  shelfId: string
 }
 
 export type AssetUpdateInput = {
@@ -325,9 +339,10 @@ export type AssetUpdateInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   postedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  postedBy?: Prisma.UserUpdateOneRequiredWithoutAssetsNestedInput
   shelf?: Prisma.ShelfUpdateOneRequiredWithoutAssetNestedInput
+  postedBy?: Prisma.UserUpdateOneRequiredWithoutAssetsNestedInput
 }
 
 export type AssetUncheckedUpdateInput = {
@@ -336,11 +351,12 @@ export type AssetUncheckedUpdateInput = {
   title?: Prisma.StringFieldUpdateOperationsInput | string
   author?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.StringFieldUpdateOperationsInput | string
+  shelfId?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   postedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   postedById?: Prisma.StringFieldUpdateOperationsInput | string
-  shelfId?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type AssetCreateManyInput = {
@@ -349,11 +365,12 @@ export type AssetCreateManyInput = {
   title: string
   author: string
   type: string
+  shelfId: string
   description?: string | null
   price?: string | null
+  image?: string | null
   postedAt?: Date | string
   postedById: string
-  shelfId: string
 }
 
 export type AssetUpdateManyMutationInput = {
@@ -364,6 +381,7 @@ export type AssetUpdateManyMutationInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   postedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -373,11 +391,12 @@ export type AssetUncheckedUpdateManyInput = {
   title?: Prisma.StringFieldUpdateOperationsInput | string
   author?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.StringFieldUpdateOperationsInput | string
+  shelfId?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   postedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   postedById?: Prisma.StringFieldUpdateOperationsInput | string
-  shelfId?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type AssetCountOrderByAggregateInput = {
@@ -386,11 +405,12 @@ export type AssetCountOrderByAggregateInput = {
   title?: Prisma.SortOrder
   author?: Prisma.SortOrder
   type?: Prisma.SortOrder
+  shelfId?: Prisma.SortOrder
   description?: Prisma.SortOrder
   price?: Prisma.SortOrder
+  image?: Prisma.SortOrder
   postedAt?: Prisma.SortOrder
   postedById?: Prisma.SortOrder
-  shelfId?: Prisma.SortOrder
 }
 
 export type AssetMaxOrderByAggregateInput = {
@@ -399,11 +419,12 @@ export type AssetMaxOrderByAggregateInput = {
   title?: Prisma.SortOrder
   author?: Prisma.SortOrder
   type?: Prisma.SortOrder
+  shelfId?: Prisma.SortOrder
   description?: Prisma.SortOrder
   price?: Prisma.SortOrder
+  image?: Prisma.SortOrder
   postedAt?: Prisma.SortOrder
   postedById?: Prisma.SortOrder
-  shelfId?: Prisma.SortOrder
 }
 
 export type AssetMinOrderByAggregateInput = {
@@ -412,11 +433,12 @@ export type AssetMinOrderByAggregateInput = {
   title?: Prisma.SortOrder
   author?: Prisma.SortOrder
   type?: Prisma.SortOrder
+  shelfId?: Prisma.SortOrder
   description?: Prisma.SortOrder
   price?: Prisma.SortOrder
+  image?: Prisma.SortOrder
   postedAt?: Prisma.SortOrder
   postedById?: Prisma.SortOrder
-  shelfId?: Prisma.SortOrder
 }
 
 export type AssetListRelationFilter = {
@@ -533,6 +555,7 @@ export type AssetCreateWithoutShelfInput = {
   type: string
   description?: string | null
   price?: string | null
+  image?: string | null
   postedAt?: Date | string
   postedBy: Prisma.UserCreateNestedOneWithoutAssetsInput
 }
@@ -545,6 +568,7 @@ export type AssetUncheckedCreateWithoutShelfInput = {
   type: string
   description?: string | null
   price?: string | null
+  image?: string | null
   postedAt?: Date | string
   postedById: string
 }
@@ -584,11 +608,12 @@ export type AssetScalarWhereInput = {
   title?: Prisma.StringFilter<"Asset"> | string
   author?: Prisma.StringFilter<"Asset"> | string
   type?: Prisma.StringFilter<"Asset"> | string
+  shelfId?: Prisma.StringFilter<"Asset"> | string
   description?: Prisma.StringNullableFilter<"Asset"> | string | null
   price?: Prisma.StringNullableFilter<"Asset"> | string | null
+  image?: Prisma.StringNullableFilter<"Asset"> | string | null
   postedAt?: Prisma.DateTimeFilter<"Asset"> | Date | string
   postedById?: Prisma.StringFilter<"Asset"> | string
-  shelfId?: Prisma.StringFilter<"Asset"> | string
 }
 
 export type AssetCreateWithoutPostedByInput = {
@@ -599,6 +624,7 @@ export type AssetCreateWithoutPostedByInput = {
   type: string
   description?: string | null
   price?: string | null
+  image?: string | null
   postedAt?: Date | string
   shelf: Prisma.ShelfCreateNestedOneWithoutAssetInput
 }
@@ -609,10 +635,11 @@ export type AssetUncheckedCreateWithoutPostedByInput = {
   title: string
   author: string
   type: string
+  shelfId: string
   description?: string | null
   price?: string | null
+  image?: string | null
   postedAt?: Date | string
-  shelfId: string
 }
 
 export type AssetCreateOrConnectWithoutPostedByInput = {
@@ -649,6 +676,7 @@ export type AssetCreateManyShelfInput = {
   type: string
   description?: string | null
   price?: string | null
+  image?: string | null
   postedAt?: Date | string
   postedById: string
 }
@@ -661,6 +689,7 @@ export type AssetUpdateWithoutShelfInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   postedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   postedBy?: Prisma.UserUpdateOneRequiredWithoutAssetsNestedInput
 }
@@ -673,6 +702,7 @@ export type AssetUncheckedUpdateWithoutShelfInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   postedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   postedById?: Prisma.StringFieldUpdateOperationsInput | string
 }
@@ -685,6 +715,7 @@ export type AssetUncheckedUpdateManyWithoutShelfInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   postedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   postedById?: Prisma.StringFieldUpdateOperationsInput | string
 }
@@ -695,10 +726,11 @@ export type AssetCreateManyPostedByInput = {
   title: string
   author: string
   type: string
+  shelfId: string
   description?: string | null
   price?: string | null
+  image?: string | null
   postedAt?: Date | string
-  shelfId: string
 }
 
 export type AssetUpdateWithoutPostedByInput = {
@@ -709,6 +741,7 @@ export type AssetUpdateWithoutPostedByInput = {
   type?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   postedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   shelf?: Prisma.ShelfUpdateOneRequiredWithoutAssetNestedInput
 }
@@ -719,10 +752,11 @@ export type AssetUncheckedUpdateWithoutPostedByInput = {
   title?: Prisma.StringFieldUpdateOperationsInput | string
   author?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.StringFieldUpdateOperationsInput | string
+  shelfId?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   postedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  shelfId?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type AssetUncheckedUpdateManyWithoutPostedByInput = {
@@ -731,10 +765,11 @@ export type AssetUncheckedUpdateManyWithoutPostedByInput = {
   title?: Prisma.StringFieldUpdateOperationsInput | string
   author?: Prisma.StringFieldUpdateOperationsInput | string
   type?: Prisma.StringFieldUpdateOperationsInput | string
+  shelfId?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   price?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   postedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  shelfId?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 
@@ -745,13 +780,14 @@ export type AssetSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   title?: boolean
   author?: boolean
   type?: boolean
+  shelfId?: boolean
   description?: boolean
   price?: boolean
+  image?: boolean
   postedAt?: boolean
   postedById?: boolean
-  shelfId?: boolean
-  postedBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   shelf?: boolean | Prisma.ShelfDefaultArgs<ExtArgs>
+  postedBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["asset"]>
 
 export type AssetSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -760,13 +796,14 @@ export type AssetSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   title?: boolean
   author?: boolean
   type?: boolean
+  shelfId?: boolean
   description?: boolean
   price?: boolean
+  image?: boolean
   postedAt?: boolean
   postedById?: boolean
-  shelfId?: boolean
-  postedBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   shelf?: boolean | Prisma.ShelfDefaultArgs<ExtArgs>
+  postedBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["asset"]>
 
 export type AssetSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -775,13 +812,14 @@ export type AssetSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   title?: boolean
   author?: boolean
   type?: boolean
+  shelfId?: boolean
   description?: boolean
   price?: boolean
+  image?: boolean
   postedAt?: boolean
   postedById?: boolean
-  shelfId?: boolean
-  postedBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   shelf?: boolean | Prisma.ShelfDefaultArgs<ExtArgs>
+  postedBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["asset"]>
 
 export type AssetSelectScalar = {
@@ -790,32 +828,33 @@ export type AssetSelectScalar = {
   title?: boolean
   author?: boolean
   type?: boolean
+  shelfId?: boolean
   description?: boolean
   price?: boolean
+  image?: boolean
   postedAt?: boolean
   postedById?: boolean
-  shelfId?: boolean
 }
 
-export type AssetOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "isbn" | "title" | "author" | "type" | "description" | "price" | "postedAt" | "postedById" | "shelfId", ExtArgs["result"]["asset"]>
+export type AssetOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "isbn" | "title" | "author" | "type" | "shelfId" | "description" | "price" | "image" | "postedAt" | "postedById", ExtArgs["result"]["asset"]>
 export type AssetInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  postedBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   shelf?: boolean | Prisma.ShelfDefaultArgs<ExtArgs>
+  postedBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
 export type AssetIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  postedBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   shelf?: boolean | Prisma.ShelfDefaultArgs<ExtArgs>
+  postedBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
 export type AssetIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  postedBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   shelf?: boolean | Prisma.ShelfDefaultArgs<ExtArgs>
+  postedBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
 
 export type $AssetPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Asset"
   objects: {
-    postedBy: Prisma.$UserPayload<ExtArgs>
     shelf: Prisma.$ShelfPayload<ExtArgs>
+    postedBy: Prisma.$UserPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -823,11 +862,12 @@ export type $AssetPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     title: string
     author: string
     type: string
+    shelfId: string
     description: string | null
     price: string | null
+    image: string | null
     postedAt: Date
     postedById: string
-    shelfId: string
   }, ExtArgs["result"]["asset"]>
   composites: {}
 }
@@ -1222,8 +1262,8 @@ readonly fields: AssetFieldRefs;
  */
 export interface Prisma__AssetClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  postedBy<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   shelf<T extends Prisma.ShelfDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ShelfDefaultArgs<ExtArgs>>): Prisma.Prisma__ShelfClient<runtime.Types.Result.GetResult<Prisma.$ShelfPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  postedBy<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1258,11 +1298,12 @@ export interface AssetFieldRefs {
   readonly title: Prisma.FieldRef<"Asset", 'String'>
   readonly author: Prisma.FieldRef<"Asset", 'String'>
   readonly type: Prisma.FieldRef<"Asset", 'String'>
+  readonly shelfId: Prisma.FieldRef<"Asset", 'String'>
   readonly description: Prisma.FieldRef<"Asset", 'String'>
   readonly price: Prisma.FieldRef<"Asset", 'String'>
+  readonly image: Prisma.FieldRef<"Asset", 'String'>
   readonly postedAt: Prisma.FieldRef<"Asset", 'DateTime'>
   readonly postedById: Prisma.FieldRef<"Asset", 'String'>
-  readonly shelfId: Prisma.FieldRef<"Asset", 'String'>
 }
     
 

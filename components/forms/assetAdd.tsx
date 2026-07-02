@@ -1,6 +1,7 @@
 import { addAsset } from "@/app/dashboard/[id]/assets/actions";
 import SubmitButton from "./submit-button";
-import prisma from "@/app/generated/prisma"
+// import prisma from "@/app/generated/prisma"
+import prisma from "@/lib/prisma"
 import ShelfSelect from "./shelfSelect";
 
 export default async function AssetForm({data} : {data:any}) {

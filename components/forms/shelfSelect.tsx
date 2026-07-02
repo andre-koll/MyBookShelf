@@ -1,5 +1,6 @@
 import getUserId from "@/app/dashboard/actions";
-import prisma from "@/app/generated/prisma"
+// import prisma from "@/app/generated/prisma"
+import prisma from "@/lib/prisma"
 
 export default async function shelfselect() {
     const userId = await getUserId(); // Call the getUserId function to retrieve the user ID
