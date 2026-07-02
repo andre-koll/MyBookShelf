@@ -48,17 +48,6 @@ export default function Dashboard({
                 </CardContent>
             </Card>
 
-            {/* <Card>
-                <CardHeader className="flex flex-row items-center justify-between pb-2">
-                    <CardTitle>Total XYZ</CardTitle>
-                    <ChartNoAxesCombined className="h-4 w-4 text-indigo-500" />
-                </CardHeader>
-                <CardContent>
-                    <p className="text-2xl font-bold">XX</p>
-                    <p className="text-xs text-muted-foreground">Total XYZ Created</p>
-                </CardContent>
-            </Card> */}
-
             <Card>
                 <CardHeader className="flex flex-row items-center justify-between pb-2">
                     <CardTitle>Total Users</CardTitle>

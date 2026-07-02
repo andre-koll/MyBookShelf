@@ -18,8 +18,8 @@ export async function PUT(req: Request) {
                     type: true,
                     shelf: {
                         select: {
-                        name: true,
-                    },
+                            name: true,
+                        },
                     },
                 }
             });

@@ -2,7 +2,6 @@
 
 import { signOut, useSession } from "@/lib/auth-client";
 import Image from "next/image";
-// import DashboardLinks from "../../components/layout/DashboardLinks";
 import Link from "next/link";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
@@ -16,10 +15,8 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
-import { ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import test from "node:test";
 import LoadingSpinner from "@/components/layout/LoadingSpinner"
 
 export function ModeToggle() {
@@ -54,7 +51,6 @@ export interface items {
     shelf: string;
 }
 
-// export default function DashboardLayout({children}:{children : ReactNode}) {
 export default function DashboardLayout({
         children,
     }: {
@@ -73,26 +69,20 @@ export default function DashboardLayout({
     if (isPending) {
         return (
             <LoadingSpinner />
-            // <div>Loading ...</div>
         );
     }
 
-  if (!session?.user) {
-    return (
-        <div className="min-h-screen grid place-items-center p-8">
-            <div className="text-center">
-            <p>Redirecting to sign in...</p>
+    if (!session?.user) {
+        return (
+            <div className="min-h-screen grid place-items-center p-8">
+                <div className="text-center">
+                <p>Redirecting to sign in...</p>
+                </div>
             </div>
-        </div>
-    );
-  }
+        );
+    }
 
     const { user } = session;
-
-    const profileLink = "/dashboard/"+user.id+"/profile";
-
-    // console.log("User in Dashboard Layout:", user);
-    // console.log("User in Dashboard Layout:", user.id);
 
     return (
     <>
@@ -130,7 +120,7 @@ export default function DashboardLayout({
                     </Link>
 
                     <div className="hidden font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
-                        {/* <DashboardLinks /> */}
+                    {/* <DashboardLinks /> */}
                     <Link href={`/dashboard/${user.id}/assets`}>Assets</Link>
                     <Link href={`/dashboard/${user.id}/shelfs`}>Shelfs</Link>
                     </div>

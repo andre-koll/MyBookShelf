@@ -28,7 +28,7 @@ export async function GoogleApiBooks() {
   // testingg
   let isbn = '978-3-7645-0335-2'
   let apiUrl = 'https://www.googleapis.com/books/v1/volumes?q=isbn:'
-  let apiKey = 'AIzaSyCvmEXTy4I1SSveCAAKIYakNp5RVoVoHOA'
+  let apiKey = process.env.NEXT_PUBLIC_GOOGLE_API_BOOK_KEY
   let url = apiUrl + isbn + '&key=' + apiKey
   let google = await fetch(url)
   let googlebook = await google.json()

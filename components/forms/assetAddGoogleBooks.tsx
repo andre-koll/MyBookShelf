@@ -1,14 +1,17 @@
 import { updateAssetByGoogle } from "@/app/dashboard/[id]/assets/actions";
 import SubmitButton from "./submit-button";
 import prisma from "@/app/generated/prisma"
+import getUserId from "@/app/dashboard/actions";
 
-export default async function AssetGoogleBookForm({data} : {data:any}) {
+export default async function AssetGoogleBookForm() {
+    const userId = await getUserId(); // Call the getUserId function to retrieve the user ID
     // console.log('form data ', data);
 
     // Get asset data from db
     const shelfs = await prisma.shelf.findMany({
-        where: { userId: data },
+        where: { userId: userId },
     });
+
     // console.log("shelfs", shelfs)
 
     if (shelfs.length === 0) {
@@ -20,7 +23,7 @@ export default async function AssetGoogleBookForm({data} : {data:any}) {
             <form action={updateAssetByGoogle} className="space-y-2">
                 <input
                     name="userId"
-                    defaultValue={data}
+                    defaultValue={userId}
                     hidden
                     readOnly
                 />
